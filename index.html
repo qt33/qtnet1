@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>qt个人网站</title>
+	</head>
+	<body>
+		<i>当前时间:</i><i id="datetime"></i>
+         <p><a href="https://qt33.github.io/zhuye/">qt的主页</a></p>
+         <p><a href="https://qt33.github.io/jiami2.0/">qt的加密工具</a></p>
+	更多功能敬请期待	
+<script>
+			function showDateTime() {
+				var currentDate = new Date();
+				var year = currentDate.getFullYear();
+				var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+				var day = ('0' + currentDate.getDate()).slice(-2);
+				var hours = ('0' + currentDate.getHours()).slice(-2);
+				var minutes = ('0' + currentDate.getMinutes()).slice(-2);
+				var seconds = ('0' + currentDate.getSeconds()).slice(-2);
+
+				var dateTimeString = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+
+				document.getElementById('datetime').textContent = dateTimeString;
+			}
+
+			window.onload = function() {
+				showDateTime();
+				setInterval(showDateTime, 1000);
+			};
+		</script>
+	</body>
+</html>
